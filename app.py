@@ -37,5 +37,10 @@ def searchMovie():
         return render_template('userMovies.html', favMovies=result)
     return render_template('searchMovie.html', form=form)
     
+@app.route('/delete/<id>', methods=['POST'])
+def delete_movie(id):
+    mongo.db.userMovies.delete_one({'_id': id})
+    '''mongo.db.userMovies.delete_one({})'''
+    return redirect('/')
 if __name__ == '__main__':
     app.run(debug=True, port=5000, host='127.0.0.1')

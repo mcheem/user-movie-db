@@ -11,3 +11,6 @@ class addMovieForm(FlaskForm):
 
 class searchMovieForm(FlaskForm):
 	movieTitle = StringField('movieTitle')
+
+class deleteIdForm(FlaskForm):
+	MovieId = StringField('movieId', vallidators=[DataRequired])

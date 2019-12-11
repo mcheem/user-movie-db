@@ -26,6 +26,11 @@
 				<td><h2> {{ item.genre }}</h2></td>
 				<td><h2> {{ item.rating }}</h2></td>
 				<td><h2> {{ item.released }}</h2></td>
+				<td>
+					<form method="POST" action="/delete/{{item._id}}">
+						<button class="button is-danger">Remove</button>
+					</form>
+				</td>
 			</tr>
 		{% endfor %}
 		</tbody>
